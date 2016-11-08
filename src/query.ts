@@ -34,7 +34,7 @@ function extract(obj, path) {
                     type: '$exact',
                     value: value
                 };
-            }else if (/\$.*/.test(key)) {
+            } else if (/\$.*/.test(key)) {
                 if (queryTypes[key]) {
                     return {
                         path: path,
