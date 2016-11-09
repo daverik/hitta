@@ -1,0 +1,40 @@
+body {
+    color: #252525;
+    font-family: 'Space Mono', monospace;
+}
+
+p {
+    font-size: 14px;
+}
+
+.box {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.title-box {
+    margin-top: 80px;
+}
+
+label {
+    margin-top: 25px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.code-box {
+    padding: 10px;
+    background-color: #f8f8f8;
+}
+
+.reference-item {
+    display: flex;
+    margin-bottom: 10px;
+
+    > div:first-child {
+        margin-right: 15px;
+        padding-right: 15px;
+        min-width: 100px;
+        border-right: 1px solid #ddd;
+    }
+}

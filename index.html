@@ -6,13 +6,64 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+        
+        <link href="dist/site/main.css" rel="stylesheet">
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
 
-        <!--/*<script src="dist/hitta.js"></script>*/-->
-        <script src="test.js"></script>
+        <section class="box title-box">
+            <h1>Hitta</h1>
+            <p>
+                <em>Hitta</em> is a library for querying data in the browser using MongoDB-like queries. 
+                The following example will select all elements in the array 'users' with a name found in the array defined after $in.
+            </p>
+            <label>example</label>
+            <div class="code-box">
+                <pre><code class="html">    let queried = query(users)({
+        name: {
+            $in: ['David', 'Daniel', 'Clark']
+        }
+    });</code></pre>
+            </div>
+        </section>
+        <section class="box">
+            <h3>Reference</h3>
+            <div class="reference-item">
+                <div>$gt</div>
+                <div>
+                    <p>Select items where the value is greater than the query value</p>
+                    <label>example</label>
+                    <div class="code-box">
+                            <pre><code class="html">    let queried = query(users)({
+        age: {
+            $gt: 20
+        }
+    });</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="reference-item">
+                <div>$gte</div>
+                <div>
+                    <p>Select items where the value is greater than or equal to the query value</p>
+                    <label>example</label>
+                    <div class="code-box">
+                            <pre><code class="html">    let queried = query(users)({
+        age: {
+            $gt: 20
+        }
+    });</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+        <script src="dist/hitta.js"></script>
     </body>
 </html>
