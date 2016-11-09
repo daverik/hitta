@@ -16,8 +16,20 @@ var reference = {
         code: 'let queried = query(users)({age: {$lte: 20}});'
     },
     $in: {
-        text: 'Select item that are not found in array',
-        code: "let queried: any = query(users)({name: {$in: ['David', 'Daniel', 'Clark']}});"
+        text: 'Select items that are found in given array',
+        code: "let queried = query(users)({name: {$in: ['David', 'Daniel', 'Clark']}});"
+    },
+    $nin: {
+        text: 'Select items that are not found in given array',
+        code: "let queried = query(users)({name: {$nin: ['David', 'Daniel', 'Clark']}});"
+    },
+    regex: {
+        text: 'Select items by matching regex',
+        code: "let queried: any = query(users)({name: /D.*/});"
+    },
+    equality: {
+        text: 'Select items by matching by equality',
+        code: "let queried: any = query(users)({name: 'David'});"
     }
 }
 
