@@ -32,38 +32,27 @@
             </div>
         </section>
         <section class="box">
+            <hr />
+        </section>
+        <section class="box">
             <h3>Reference</h3>
-            <div class="reference-item">
-                <div>$gt</div>
-                <div>
-                    <p>Select items where the value is greater than the query value</p>
-                    <label>example</label>
-                    <div class="code-box">
-                            <pre><code class="html">    let queried = query(users)({
-        age: {
-            $gt: 20
-        }
-    });</code></pre>
-                    </div>
+            <div class="reference">
+                <div id="reference-list">
+                    <!--<a href="" class="reference-link">$gt</a>
+                    <a href="" class="reference-link">$gte</a>-->
                 </div>
-            </div>
-            <div class="reference-item">
-                <div>$gte</div>
                 <div>
-                    <p>Select items where the value is greater than or equal to the query value</p>
+                    <h4 id="reference-title">$gt</h4>
+                    <p id="reference-text"></p>
                     <label>example</label>
                     <div class="code-box">
-                            <pre><code class="html">    let queried = query(users)({
-        age: {
-            $gt: 20
-        }
-    });</code></pre>
+                            <pre><code class="html" id="reference-code"></code></pre>
                     </div>
                 </div>
             </div>
         </section>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
         <script src="dist/hitta.js"></script>
+        <script src="site-src/js/index.js"></script>
     </body>
 </html>

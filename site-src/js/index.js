@@ -1,0 +1,55 @@
+var reference = {
+    $gt: {
+        text: 'Select items where the value is greater than the query value',
+        code: 'let queried = query(users)({age: {$gt: 20}});'
+    },
+    $gte: {
+        text: 'Select items where the value is greater than or equal to the query value',
+        code: 'let queried = query(users)({age: {$gte: 20}});'
+    },
+    $lt: {
+        text: 'Select items where the value is less than the query value',
+        code: 'let queried = query(users)({age: {$lt: 20}});'
+    },
+    $lte: {
+        text: 'Select items where the value is less than or equal to the query value',
+        code: 'let queried = query(users)({age: {$lte: 20}});'
+    },
+    $in: {
+        text: 'Select item that are not found in array',
+        code: "let queried: any = query(users)({name: {$in: ['David', 'Daniel', 'Clark']}});"
+    }
+}
+
+window.onload = function() {
+
+    setReference('$gt');
+
+    var refList = document.getElementById('reference-list');
+
+    for(var k in reference) {
+        var aTag = document.createElement('a');
+
+        aTag.className = 'reference-link';
+        aTag.setAttribute('href', '#');
+        aTag.innerHTML = k;
+
+        (function() {
+
+            var _k = k;
+
+            aTag.addEventListener('click', function(e) {
+                e.preventDefault();
+                setReference(_k);
+            });
+        })();
+
+        refList.appendChild(aTag);
+    }
+};
+
+function setReference(ref) {
+    document.getElementById('reference-title').innerHTML = ref;
+    document.getElementById('reference-text').innerHTML  = reference[ref].text;
+    document.getElementById('reference-code').innerHTML  = reference[ref].code;
+}

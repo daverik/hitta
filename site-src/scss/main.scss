@@ -27,7 +27,7 @@ label {
     background-color: #f8f8f8;
 }
 
-.reference-item {
+.reference {
     display: flex;
     margin-bottom: 10px;
 
@@ -37,4 +37,14 @@ label {
         min-width: 100px;
         border-right: 1px solid #ddd;
     }
+
+    a {
+        display: block;
+    }
+}
+
+hr {
+    margin: 15px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: none;
 }
