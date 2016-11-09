@@ -63,5 +63,5 @@ window.onload = function() {
 function setReference(ref) {
     document.getElementById('reference-title').innerHTML = ref;
     document.getElementById('reference-text').innerHTML  = reference[ref].text;
-    document.getElementById('reference-code').innerHTML  = reference[ref].code;
+    document.getElementById('reference-code').innerHTML  = js_beautify(reference[ref].code);
 }
