@@ -1,19 +1,37 @@
+$primary-color: #D24D57;
+$text-color: #252525;
+
 body {
-    color: #252525;
-    font-family: 'Space Mono', monospace;
+    color: $text-color;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
 }
 
-p {
-    font-size: 14px;
+h1 {
+    font-family: 'Righteous', cursive;
+    font-size: 50px;
 }
 
 .box {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .title-box {
-    margin-top: 80px;
+    padding-top: 40px;
+
+    h1 {
+        color: $primary-color;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
 }
 
 label {
@@ -31,20 +49,39 @@ label {
     display: flex;
     margin-bottom: 10px;
 
+    h4 {
+        font-size: 20px;
+        color: $primary-color;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
     > div:first-child {
         margin-right: 15px;
         padding-right: 15px;
         min-width: 100px;
-        border-right: 1px solid #ddd;
+    }
+
+    #reference-text {
+        font-size: 18px;
     }
 
     a {
         display: block;
+        color: $primary-color;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 2px;
+
+        &:hover {
+            background-color: $primary-color;
+            color: #fff;
+        }
     }
 }
 
 hr {
-    margin: 15px 0;
+    margin: 25px 0;
     border-top: 1px solid #ddd;
     border-bottom: none;
 }

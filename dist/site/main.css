@@ -1,16 +1,26 @@
 body {
   color: #252525;
-  font-family: 'Space Mono', monospace; }
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  padding: 0;
+  margin: 0; }
 
-p {
-  font-size: 14px; }
+h1 {
+  font-family: 'Righteous', cursive;
+  font-size: 50px; }
 
 .box {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto; }
 
 .title-box {
-  margin-top: 80px; }
+  padding-top: 40px; }
+  .title-box h1 {
+    color: #D24D57;
+    text-align: center;
+    margin-bottom: 10px; }
+  .title-box p {
+    font-size: 20px; }
 
 label {
   margin-top: 25px;
@@ -24,16 +34,29 @@ label {
 .reference {
   display: flex;
   margin-bottom: 10px; }
+  .reference h4 {
+    font-size: 20px;
+    color: #D24D57;
+    margin-top: 0;
+    margin-bottom: 10px; }
   .reference > div:first-child {
     margin-right: 15px;
     padding-right: 15px;
-    min-width: 100px;
-    border-right: 1px solid #ddd; }
+    min-width: 100px; }
+  .reference #reference-text {
+    font-size: 18px; }
   .reference a {
-    display: block; }
+    display: block;
+    color: #D24D57;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 2px; }
+    .reference a:hover {
+      background-color: #D24D57;
+      color: #fff; }
 
 hr {
-  margin: 15px 0;
+  margin: 25px 0;
   border-top: 1px solid #ddd;
   border-bottom: none; }
 
