@@ -127,4 +127,26 @@ describe('something', () => {
 
         expect(queried.length).to.be.equal(2);
     });
+
+    it('multiple selects (1)', () => {
+        let queried: any = query(users)({
+            name: /D.*/,
+            contact: {
+                address: 'The way 19'
+            }
+        });
+
+        expect(queried.length).to.be.equal(1);
+    });
+
+    it('multiple selects (2)', () => {
+        let queried: any = query(users)({
+            name: /D.*/,
+            age: {
+                $gt: 27
+            }
+        });
+
+        expect(queried.length).to.be.equal(1);
+    });
 });
