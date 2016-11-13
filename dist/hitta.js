@@ -66,25 +66,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	"use strict";
 	var lodash_1 = __webpack_require__(2);
 	var types_1 = __webpack_require__(4);
+	var utils_1 = __webpack_require__(5);
 	exports.query = function (data) {
-	    if (!lodash_1.isArray(data)) {
+	    if (!utils_1.isArray(data)) {
 	        throw new Error('Not an array');
 	    }
 	    return function (query) {
 	        var qa = lodash_1.flatten(extract(query, ''));
-	        return lodash_1.filter(data, function (obj) {
-	            return lodash_1.every(qa, function (q) {
+	        return utils_1.filter(data, function (obj) {
+	            return utils_1.every(qa, function (q) {
 	                return types_1.queryTypes[q.type](lodash_1.get(obj, q.path), q.value);
 	            });
 	        });
 	    };
 	};
 	function extract(obj, path) {
-	    if (lodash_1.isArray(exports.query) || !lodash_1.keys(obj).length) {
+	    if (utils_1.isArray(exports.query) || !utils_1.keys(obj).length) {
 	        return [];
 	    }
 	    else {
-	        return lodash_1.map(obj, function (value, key) {
+	        return utils_1.map(obj, function (value, key) {
 	            if (value instanceof RegExp) {
 	                return {
 	                    path: path === '' ? key : path + "." + key,
@@ -17197,6 +17198,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    $exact: function (srcValue, queryValue) {
 	        return srcValue === queryValue;
+	    }
+	};
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports) {
+
+	"use strict";
+	exports.every = function (arr, cb) {
+	    return arr.every(cb);
+	};
+	exports.filter = function (arr, cb) {
+	    return arr.filter(cb);
+	};
+	exports.isArray = function (obj) {
+	    return Array.isArray(obj);
+	};
+	exports.keys = function (obj) {
+	    return Object.keys(obj);
+	};
+	exports.some = function (arr, cb) {
+	    return arr.some(cb);
+	};
+	exports.map = function (obj, cb) {
+	    if (exports.isArray(obj)) {
+	        return obj.map(cb);
+	    }
+	    else {
+	        var arr = [];
+	        for (var k in obj) {
+	            arr.push(cb(obj[k], k));
+	        }
+	        return arr;
 	    }
 	};
 

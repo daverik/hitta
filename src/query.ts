@@ -1,5 +1,6 @@
-import { keys, some,isArray, map, flatten, filter, every, get } from 'lodash';
+import { flatten, get } from 'lodash';
 import { queryTypes } from './types';
+import { map, some, keys, every, filter, isArray } from './utils';
 
 export const query = (data) => {
     if (!isArray(data)) {
@@ -21,7 +22,7 @@ function extract(obj, path) {
     if (isArray(query) || !keys(obj).length) {
         return [];
     } else {
-        return map(obj, (value, key: string) => {
+        return map(obj, (value, key: string): any => {
             if (value instanceof RegExp) {
                 return {
                     path: path === '' ? key : `${path}.${key}`,
