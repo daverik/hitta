@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
         sass: {
@@ -33,10 +34,18 @@ module.exports = function (grunt) {
                     'release/hitta.min.js': ['dist/hitta.js']
                 }
             }
+        },
+        copy: {
+            build: {
+                files: [
+                    // includes files within path
+                    { expand: true, flatten: true, src: ['dist/hitta.js'], dest: 'release/',}
+                ],
+            },
         }
     });
 
     grunt.registerTask('default', ['sass', 'watch']);
 
-    grunt.registerTask('build', ['uglify:build']);
+    grunt.registerTask('build', ['uglify:build', 'copy:build']);
 };
