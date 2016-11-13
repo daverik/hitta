@@ -1,8 +1,8 @@
 module.exports = function (grunt) {
-    // Do grunt-related things in here
-    require('load-grunt-tasks')(grunt); // npm install --save-dev load-grunt-tasks
+    require('load-grunt-tasks')(grunt);
 
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.initConfig({
         sass: {
@@ -24,7 +24,19 @@ module.exports = function (grunt) {
                 },
             },
         },
+        uglify: {
+            options: {
+                mangle: false
+            },
+            build: {
+                files: {
+                    'release/hitta.min.js': ['dist/hitta.js']
+                }
+            }
+        }
     });
 
     grunt.registerTask('default', ['sass', 'watch']);
+
+    grunt.registerTask('build', ['uglify:build']);
 };
