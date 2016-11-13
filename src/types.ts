@@ -1,4 +1,4 @@
-import { isUndefined, some } from 'lodash';
+import { some, isUndefined } from './utils';
 
 export const queryTypes = {
     $exists: (srcValue, queryValue) => {

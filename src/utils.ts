@@ -30,4 +30,34 @@ export const map = (obj: any, cb): Array<any> => {
 
         return arr;
     }
+};
+
+export const flatten = (arr: Array<any>) => {
+    let newArr = [];
+
+    arr.forEach((val) => {
+        if (isArray(val)) {
+            val.forEach((_val) => {
+                newArr.push(_val);
+            });
+        } else {
+            newArr.push(val);
+        }
+    });
+
+    return newArr;
+};
+
+export const get = (obj: any, path: string) => {
+    let pathArr = path.split('.');
+
+    if (pathArr.length === 1) {
+        return obj[pathArr[0]];
+    } else {
+        return get(obj[pathArr[0]], pathArr.slice(1, pathArr.length).join('.'));
+    }
+};
+
+export const isUndefined = (obj: any) => {
+    return typeof obj === 'undefined';
 }

@@ -1,6 +1,5 @@
-import { flatten, get } from 'lodash';
 import { queryTypes } from './types';
-import { map, some, keys, every, filter, isArray } from './utils';
+import { map, some, keys, every, filter, isArray, flatten, get } from './utils';
 
 export const query = (data) => {
     if (!isArray(data)) {
