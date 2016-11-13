@@ -1,0 +1,10 @@
+src
+site-src
+dist
+.vscode
+favicon.ico
+Gruntfile.js
+index.html
+karma.conf.js
+tsconfig.json
+webpack.config.js
