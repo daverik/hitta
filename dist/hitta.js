@@ -208,6 +208,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	exports.get = function (obj, path) {
 	    var pathArr = path.split('.');
+	    if (!obj) {
+	        return null;
+	    }
 	    if (pathArr.length === 1) {
 	        return obj[pathArr[0]];
 	    }

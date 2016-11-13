@@ -50,6 +50,10 @@ export const flatten = (arr: Array<any>) => {
 
 export const get = (obj: any, path: string) => {
     let pathArr = path.split('.');
+    
+    if (!obj) {
+        return null;
+    }
 
     if (pathArr.length === 1) {
         return obj[pathArr[0]];
