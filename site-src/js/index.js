@@ -1,35 +1,35 @@
 var reference = {
     $gt: {
         text: 'Select items where the value is greater than the query value',
-        code: 'let queried = query(users)({age: {$gt: 20}});'
+        code: 'let filtered = filter(users)({age: {$gt: 20}});'
     },
     $gte: {
         text: 'Select items where the value is greater than or equal to the query value',
-        code: 'let queried = query(users)({age: {$gte: 20}});'
+        code: 'let filtered = filter(users)({age: {$gte: 20}});'
     },
     $lt: {
         text: 'Select items where the value is less than the query value',
-        code: 'let queried = query(users)({age: {$lt: 20}});'
+        code: 'let filtered = filter(users)({age: {$lt: 20}});'
     },
     $lte: {
         text: 'Select items where the value is less than or equal to the query value',
-        code: 'let queried = query(users)({age: {$lte: 20}});'
+        code: 'let filtered = filter(users)({age: {$lte: 20}});'
     },
     $in: {
         text: 'Select items that are found in given array',
-        code: "let queried = query(users)({name: {$in: ['David', 'Daniel', 'Clark']}});"
+        code: "let filtered = filter(users)({name: {$in: ['David', 'Daniel', 'Clark']}});"
     },
     $nin: {
         text: 'Select items that are not found in given array',
-        code: "let queried = query(users)({name: {$nin: ['David', 'Daniel', 'Clark']}});"
+        code: "let filtered = filter(users)({name: {$nin: ['David', 'Daniel', 'Clark']}});"
     },
     regex: {
         text: 'Select items by matching regex',
-        code: "let queried: any = query(users)({name: /D.*/});"
+        code: "let filtered = filter(users)({name: /D.*/});"
     },
     equality: {
         text: 'Select items by matching by equality',
-        code: "let queried: any = query(users)({name: 'David'});"
+        code: "let filtered = filter(users)({name: 'David'});"
     }
 }
 
